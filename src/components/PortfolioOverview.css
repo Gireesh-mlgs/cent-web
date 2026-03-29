@@ -1,0 +1,335 @@
+.portfolio {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.portfolio-inner {
+  display: flex;
+  gap: 4rem;
+}
+
+.portfolio-sidebar {
+  width: 30%;
+  padding-right: 2rem;
+}
+
+.sidebar-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.balance-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.balance-container .currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-right: 0.25rem;
+}
+
+.balance-container .amount {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums; /* Makes bouncing letters stay stable */
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 500;
+  user-select: none;
+  background: transparent;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 255, 54, 0.15);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.tag.active {
+  background: var(--color-text-primary);
+  color: var(--color-accent);
+  border-color: var(--color-text-primary);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(212, 255, 54, 0.2);
+}
+
+.portfolio-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Right main area */
+.portfolio-main {
+  width: 70%;
+}
+
+.portfolio-stats {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+}
+
+.stat-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-group .label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-group .value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  min-width: 120px; /* stops layout shift when scrambling digits */
+}
+
+/* Chart Container */
+.chart-container {
+  background: var(--color-accent);
+  border-radius: 12px;
+  padding: 2rem;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interactive-chart-glass {
+  position: relative;
+  overflow: visible;
+}
+.interactive-chart-glass:hover {
+  box-shadow: 0 20px 40px rgba(212, 255, 54, 0.15);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.chart-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+  cursor: default;
+}
+
+.legend-item:hover {
+  opacity: 0.7;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+}
+.dot-dark { background: #1a1a1a; }
+.dot-white { background: #ffffff; }
+.dot-black { background: #000000; }
+
+.pulse-dot {
+  animation: pulse-dot-anim 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot-anim {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.chart-area {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(0,0,0,0.5);
+  padding-bottom: 1.5rem; 
+}
+
+.bar-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Moden interactive bar columns */
+.hoverable-bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 6%;
+  justify-content: flex-end;
+  position: relative;
+  cursor: crosshair;
+}
+
+.stacked-bar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Dim all other bars visually when hovering one */
+.dimmed-bar {
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+/* Butter smooth height transitions for morphing layout */
+.bar-segment {
+  width: 100%;
+  background: var(--color-white);
+  border-radius: 2px;
+  margin-top: 2px;
+  opacity: 0.9;
+  /* Complex cubic bezier for liquid fluid morphing */
+  transition: height 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* On hover, pop out the specific segments */
+.hoverable-bar-col:hover .bar-segment {
+  opacity: 1;
+  transform: scaleX(1.3);
+  z-index: 10;
+}
+
+.bar-segment.top {
+  background: #1a1a1a;
+}
+.bar-segment.middle {
+  background: rgba(0,0,0,0.6);
+}
+.bar-segment.bottom {
+  background: rgba(0,0,0,0.2);
+}
+
+.x-label {
+  position: absolute;
+  bottom: -1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(0,0,0,0.5);
+  transition: all 0.2s ease;
+}
+
+.x-label.active-label {
+  color: #000;
+  font-weight: 800;
+  transform: translateY(-2px);
+}
+
+/* Animated interactive tooltips on top of the bars */
+.chart-tooltip {
+  position: absolute;
+  bottom: 110%; /* Above the bar */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--color-dark-bg);
+  color: var(--color-white);
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 50;
+  pointer-events: none;
+  min-width: 90px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.chart-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-dark-bg) transparent transparent transparent;
+}
+
+.chart-tooltip.show-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.chart-tooltip div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+.chart-tooltip div:last-child {
+  margin-bottom: 0;
+}
+
+.tooltip-dot {
+  width: 6px; height: 6px; border-radius: 50%; display: inline-block; margin-right: 0.5rem;
+}

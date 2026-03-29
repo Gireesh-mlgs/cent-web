@@ -1,0 +1,158 @@
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.hero-content {
+  max-width: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2.5rem;
+  max-width: 400px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-actions .btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.hero-floating-elements {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Cards Common */
+.floating-card {
+  position: absolute;
+  background: var(--color-white);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+  pointer-events: auto;
+}
+
+/* 1. Stat Card */
+.stat-card {
+  top: 10%;
+  left: 20%;
+  width: 200px;
+}
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.5rem;
+}
+.badge {
+  background: var(--color-bg-secondary);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* 2. Yellow Card */
+.yellow-card {
+  background: var(--color-accent);
+  top: 40%;
+  left: 5%;
+  width: 180px;
+}
+.chart-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* 3. Bar Card */
+.bar-card {
+  top: 30%;
+  right: 5%;
+  width: 220px;
+}
+.mock-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 60px;
+  margin-top: 1rem;
+}
+.bar {
+  flex: 1;
+  background: var(--color-bg-secondary);
+  border-radius: 2px;
+}
+.yellow-bar {
+  background: var(--color-accent);
+}
+
+/* 4. Select Card */
+.select-card {
+  bottom: 20%;
+  left: 30%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+}
+.select-card span {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+.select-card select {
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Background scattered squares */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  width: 600px;
+  height: 600px;
+  background-image: 
+    radial-gradient(var(--color-accent) 2px, transparent 2px),
+    radial-gradient(var(--color-accent) 2px, transparent 2px);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
+  opacity: 0.1;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(2px);
+}

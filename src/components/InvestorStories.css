@@ -1,0 +1,73 @@
+.investor-stories {
+  padding-bottom: 6rem;
+}
+
+.investor-inner {
+  display: flex;
+  gap: 4rem;
+}
+
+.investor-content {
+  width: 70%;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.story-card {
+  background: var(--color-accent);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.story-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  color: var(--color-text-primary);
+}
+
+.story-info .quote {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.story-info .author {
+  font-size: 0.75rem;
+  font-weight: 600;
+  align-self: flex-end;
+}
+
+.story-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 1;
+}
+
+.blend-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  mix-blend-mode: multiply; /* This applies the yellow background perfectly to b&w images */
+  filter: contrast(1.2);
+}
