@@ -8,7 +8,7 @@ const SmartGrowth = () => {
         
         {/* Left Nav */}
         <div className="vertical-nav-container">
-          <div className="sidebar-logo">Caplan</div>
+          <div className="sidebar-logo">cent</div>
           <ul className="vertical-nav">
             <li className="active">Invest in portfolio</li>
             <li>Returns</li>
