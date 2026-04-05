@@ -7,7 +7,7 @@ const PromoVision = () => {
       <div className="promo-inner">
         {/* Left Nav */}
         <div className="vertical-nav-container">
-          <div className="sidebar-logo">Caplan</div>
+          <div className="sidebar-logo">cent</div>
           <ul className="vertical-nav">
             <li>Invest in portfolio</li>
             <li className="active">Returns</li>
