@@ -1,9 +1,4 @@
 # cent - Smart Finance Platform
-
-<div align="center">
-  <img src="./public/icons.svg" alt="cent logo" width="120" />
-</div>
-
 <br />
 
 **cent** is a hyper-modern, interactive frontend finance dashboard built as a masterclass in dynamic React architectures and Vanilla CSS animations. It connects real-time stock data pipelines and leverages ultra-low latency Large Language Models (LLMs) to provide automated market insights.
